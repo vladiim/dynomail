@@ -1,0 +1,14 @@
+%h1 CMS
+
+#content.row
+
+  - if contents.any?
+    - contents.each do |content|
+      .col-xs-3
+        .panel.panel-default
+          .panel-heading
+            %a{ href: "#{content.url}" }= content.title
+          .panel-body= content.description
+
+  - else
+    %p There is no content yet.
